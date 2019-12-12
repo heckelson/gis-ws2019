@@ -27,6 +27,6 @@ entry point for the program, containing some random values I used for testing. F
 
 ### How to run this:
 
-1) Install scala 
+1) Install [Scala](https://www.scala-lang.org/download/)
 2) ```$ scalac ToolBox.scala MainApp.scala```
 3) ```$ scala MainApp```
