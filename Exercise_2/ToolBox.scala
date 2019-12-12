@@ -65,7 +65,7 @@ object ToolBox {
     
     */
     
-        // sorry for O(n^3)
+        // sorry for O(n^3) in every step of the forward propagation
         for (x <- 0 to newHeight - 1) {
             for (y <- 0 to newWidth - 1) {
                 for(k <- 0 to width(first) - 1) {
@@ -107,6 +107,12 @@ object ToolBox {
         }
         
         newMatrix
+    }
+    
+    def relativeError(expectedVal: Double, matrix: Array[Array[Double]]) : Double = {
+        val error = 1.0/2.0 * (expectedVal - matrix(0)(0)) * (expectedVal - matrix(0)(0))
+        
+        error
     }
     
 }

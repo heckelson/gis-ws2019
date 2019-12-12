@@ -15,7 +15,7 @@ object MainApp extends App {
         Array(0.2,0.3,-0.4),
         Array(0.3,-0.4,0.5)
     )
-    
+    // weights for the first layer
     println("weights1:")
     ToolBox.printMatrix(weights1)
     println()
@@ -24,13 +24,37 @@ object MainApp extends App {
     ToolBox.printMatrix(ToolBox.scalarProduct(inputVector, weights1))
     println()
     
-    val hiddenVector = ToolBox.applyActivationFunction(
+    
+    // the vector for the hidden layer, with different activation funcs applied
+    val hiddenSig = ToolBox.applyActivationFunction(
         "sig",
         ToolBox.scalarProduct(inputVector, weights1)
     )
+    val hiddenTanh = ToolBox.applyActivationFunction(
+        "tanh",
+        ToolBox.scalarProduct(inputVector, weights1)
+    )
+    val hiddenRect = ToolBox.applyActivationFunction(
+        "rect",
+        ToolBox.scalarProduct(inputVector, weights1)
+    )
+    val hiddenNone = ToolBox.applyActivationFunction(
+        "none",
+        ToolBox.scalarProduct(inputVector, weights1)
+    )
     
-    println("hiddenVector (scalar product with activation func applied):")
-    ToolBox.printMatrix(hiddenVector)
+    // print
+    println("hiddenVector (sig):")
+    ToolBox.printMatrix(hiddenSig)
+    println()
+    println("hiddenVector (tanh):")
+    ToolBox.printMatrix(hiddenTanh)
+    println()
+    println("hiddenVector (rect):")
+    ToolBox.printMatrix(hiddenRect)
+    println()
+    println("hiddenVector (none):")
+    ToolBox.printMatrix(hiddenNone)
     println()
     
     // our output layer has exactly one value, hence we create a 3x1 matrix
@@ -48,32 +72,44 @@ object MainApp extends App {
     // apply all the activation functions ...
     val outputSig  = ToolBox.applyActivationFunction(
         "sig",
-        ToolBox.scalarProduct(hiddenVector, weights2)
+        ToolBox.scalarProduct(hiddenSig, weights2)
     )
     val outputTanh = ToolBox.applyActivationFunction(
         "tanh",
-        ToolBox.scalarProduct(hiddenVector, weights2)
+        ToolBox.scalarProduct(hiddenTanh, weights2)
     )
     val outputRect = ToolBox.applyActivationFunction(
         "rect",
-        ToolBox.scalarProduct(hiddenVector, weights2)
+        ToolBox.scalarProduct(hiddenRect, weights2)
+    )
+    val outputNone = ToolBox.applyActivationFunction(
+        "rect",
+        ToolBox.scalarProduct(hiddenNone, weights2)
     )
     
     // ... and print.
     println("output (raw) for comparison:")
-    ToolBox.printMatrix(ToolBox.scalarProduct(hiddenVector, weights2))
+    ToolBox.printMatrix(outputNone)
     println()
     
     println("output (sig):")
     ToolBox.printMatrix(outputSig)
+    println("relative error: " + ToolBox.relativeError(0.5, outputSig))
     println()
     
     println("output (tanh):")
     ToolBox.printMatrix(outputTanh)
+    println("relative error: " + ToolBox.relativeError(0.5, outputTanh))
     println()
     
     println("output (rect):")
     ToolBox.printMatrix(outputRect)
+    println("relative error: " + ToolBox.relativeError(0.5, outputRect))
     println()
     
 }
+
+// Zu Folie Backpropagation - weight update
+//if j is an output neuron
+// if j is a hidden neuron
+// steht im Skriptum verkehrt herum
