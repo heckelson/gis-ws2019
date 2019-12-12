@@ -23,3 +23,8 @@ this utility class contains all the utility functions one needs to do a forward 
 
 entry point for the program, containing some random values I used for testing. Feel free to fork it and write a neat interface.
 
+### How to run this:
+
+1) Install scala 
+2) ```$ scalac ToolBox.scala MainApp.scala```
+3) ```scala MainApp```
