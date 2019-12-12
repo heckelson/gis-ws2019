@@ -15,7 +15,6 @@ object ToolBox {
         
         var result = Array.ofDim[Double](newWidth, newHeight)
         
-        
         for(i <- 0 to newHeight - 1) {
             for (j <- 0 to newWidth - 1) {
                 result(j)(i) = input(i)(j)
@@ -88,7 +87,7 @@ object ToolBox {
         val mwidth : Int = width(matrix)
         
         // here is a couple lambda functions for activation functions
-        val sig  = (x: Double) => 1.0/2 * (1.0 + math.tanh(x/2.0))
+        val sig  = (x: Double) => 1.0/(1.0 + math.exp(-1 * x))
         val tanh = (x: Double) => math.tanh(x)
         val rect = (x: Double) => math.max(0,x)
         val none = (x: Double) => x

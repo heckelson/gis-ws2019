@@ -60,6 +60,10 @@ object MainApp extends App {
     )
     
     // ... and print.
+    println("output (raw) for comparison:")
+    ToolBox.printMatrix(ToolBox.scalarProduct(hiddenVector, weights2))
+    println()
+    
     println("output (sig):")
     ToolBox.printMatrix(outputSig)
     println()
