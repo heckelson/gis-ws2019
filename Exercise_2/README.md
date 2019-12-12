@@ -6,7 +6,7 @@ Featuring:
 
 * apologetic O(n^3) algorithms
 * the worst variable naming scheme since assembler was a thing
-* lots of ```Array[Array[Double]]
+* lots of ```Array[Array[Double]]```
 
 Anyway:    
 This program is split into two files:
