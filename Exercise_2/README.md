@@ -1,6 +1,6 @@
 # Exercise_2
 
-Exercise 2 was to write a program that handles forward propagation in a neural network. I decided to write mine in Scala, since I needed to practice it anyway for an exam I had.
+Exercise 2 contained an assignment to write a program that handles forward propagation in a neural network. I decided to write mine in Scala, since I needed to practice it anyway for an exam I had.
 
 Featuring:
 
