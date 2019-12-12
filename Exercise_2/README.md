@@ -7,6 +7,7 @@ Featuring:
 * apologetic O(n^3) algorithms
 * the worst variable naming scheme since assembler was a thing
 * lots of ```Array[Array[Double]]```
+* three of the best activation functions there are
 
 Anyway:    
 This program is split into two files:
@@ -18,6 +19,7 @@ this utility class contains all the utility functions one needs to do a forward 
 * printing of a matrix
 * transposition of a matrix
 * scalar product of two matrices (a vector is just a 1-dimensional matrix)
+* applying an activation function to a matrix
 
 ### ```MainApp.scala```
 
