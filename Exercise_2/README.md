@@ -11,7 +11,7 @@ Featuring:
 Anyway:    
 This program is split into two files:
 
-## ToolBox.scala
+### ```ToolBox.scala```
 
 this utility class contains all the utility functions one needs to do a forward propagation:
 
@@ -19,7 +19,7 @@ this utility class contains all the utility functions one needs to do a forward 
 * transposition of a matrix
 * scalar product of two matrices (a vector is just a 1-dimensional matrix)
 
-## MainApp.scala
+### ```MainApp.scala```
 
 entry point for the program, containing some random values I used for testing. Feel free to fork it and write a neat interface.
 
